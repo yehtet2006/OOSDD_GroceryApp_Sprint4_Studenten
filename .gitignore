@@ -361,3 +361,18 @@ MigrationBackup/
 
 # Fody - auto-generated XML schema
 FodyWeavers.xsd
+
+# Rider / JetBrains instellingen
+.idea/
+*.iml
+
+# Build-output en debug
+bin/ 
+obj/
+*.pdb
+
+# Log en tijdelijke bestanden
+*.log 
+*.cache  
+*.user
+*.suo   
