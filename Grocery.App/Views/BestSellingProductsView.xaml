@@ -44,6 +44,7 @@
                             <ColumnDefinition Width="*"/>
                             <ColumnDefinition Width="*"/>
                         </Grid.ColumnDefinitions>
+                        
                         <Label Text="{Binding Ranking}" Grid.Column="0" HorizontalOptions="Center" />
                         <Label Text="{Binding Name}" Grid.Column="1" HorizontalOptions="Center" />
                         <Label Text="{Binding NrOfSells}" Grid.Column="2" HorizontalOptions="Center" />
