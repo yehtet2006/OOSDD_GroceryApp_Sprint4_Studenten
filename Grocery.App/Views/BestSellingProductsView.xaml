@@ -12,20 +12,12 @@
         </Grid>
     </Shell.TitleView>
 
-    <Border Stroke="#C49B33" 
-            StrokeThickness="4" 
-            Padding="10" 
-            Margin="10" 
-            HorizontalOptions="Center">
+    <Border Stroke="#C49B33" StrokeThickness="4" Padding="10" Margin="10" HorizontalOptions="Center">
 
-        <CollectionView ItemsSource="{Binding Products}" 
-                        Margin="20" 
-                        HorizontalOptions="Center">
-
+        <CollectionView ItemsSource="{Binding Products}" Margin="20" HorizontalOptions="Center">
             <CollectionView.ItemsLayout>
                 <LinearItemsLayout Orientation="Vertical" ItemSpacing="10" />
             </CollectionView.ItemsLayout>
-
             <!-- Table Header -->
             <CollectionView.Header>
                 <Grid Padding="5">
@@ -35,26 +27,10 @@
                         <ColumnDefinition Width="*"/>
                         <ColumnDefinition Width="*"/>
                     </Grid.ColumnDefinitions>
-
-                    <Label Text="Rank" 
-                           Grid.Column="0" 
-                           FontAttributes="Bold" 
-                           HorizontalOptions="Center" />
-
-                    <Label Text="Product" 
-                           Grid.Column="1" 
-                           FontAttributes="Bold" 
-                           HorizontalOptions="Center" />
-
-                    <Label Text="Verkocht" 
-                           Grid.Column="2" 
-                           FontAttributes="Bold" 
-                           HorizontalOptions="Center" />
-
-                    <Label Text="Stock" 
-                           Grid.Column="3" 
-                           FontAttributes="Bold" 
-                           HorizontalOptions="Center" />
+                    <Label Text="Rank" Grid.Column="0" FontAttributes="Bold" HorizontalOptions="Center" />
+                    <Label Text="Product" Grid.Column="1" FontAttributes="Bold" HorizontalOptions="Center" />
+                    <Label Text="Verkocht" Grid.Column="2" FontAttributes="Bold" HorizontalOptions="Center" />
+                    <Label Text="Stock" Grid.Column="3" FontAttributes="Bold" HorizontalOptions="Center" />
                 </Grid>
             </CollectionView.Header>
 
@@ -68,22 +44,10 @@
                             <ColumnDefinition Width="*"/>
                             <ColumnDefinition Width="*"/>
                         </Grid.ColumnDefinitions>
-
-                        <Label Text="{Binding Ranking}" 
-                               Grid.Column="0" 
-                               HorizontalOptions="Center" />
-
-                        <Label Text="{Binding Name}" 
-                               Grid.Column="1" 
-                               HorizontalOptions="Center" />
-
-                        <Label Text="{Binding NrOfSells}" 
-                               Grid.Column="2" 
-                               HorizontalOptions="Center" />
-
-                        <Label Text="{Binding Stock}" 
-                               Grid.Column="3" 
-                               HorizontalOptions="Center" />
+                        <Label Text="{Binding Ranking}" Grid.Column="0" HorizontalOptions="Center" />
+                        <Label Text="{Binding Name}" Grid.Column="1" HorizontalOptions="Center" />
+                        <Label Text="{Binding NrOfSells}" Grid.Column="2" HorizontalOptions="Center" />
+                        <Label Text="{Binding Stock}" Grid.Column="3" HorizontalOptions="Center" />
                     </Grid>
                 </DataTemplate>
             </CollectionView.ItemTemplate>
