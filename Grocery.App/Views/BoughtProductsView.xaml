@@ -15,9 +15,14 @@
             <RowDefinition Height="80"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
-        <Picker Grid.Column="0" Grid.Row="0" Margin="10,0,0,0" Title="Klik op onderstaand pijltje om een product te selecteren:"
+        <Picker 
+            Grid.Column="0" 
+            Grid.Row="0" 
+            Margin="10,0,0,0" 
+            Title="Klik op onderstaand pijltje om een product te selecteren:"
         ItemsSource="{Binding Products}"
-        SelectedItem="{Binding SelectedProduct, Mode=TwoWay}" 
+        SelectedItem="{Binding SelectedProduct, Mode=TwoWay}"
+            ItemDisplayBinding="{Binding Name}"
         SelectedIndexChanged="Picker_SelectedIndexChanged"
         BackgroundColor="{StaticResource Primary}"
             TextColor="{StaticResource Secondary}">
