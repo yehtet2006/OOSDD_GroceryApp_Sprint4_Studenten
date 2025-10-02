@@ -35,6 +35,18 @@
                                 <ColumnDefinition Width="*"/>
                             </Grid.ColumnDefinitions>
                             <!-- Toon hier de naam van de Client naam van de boodschappenlijst -->
+                            <!-- Naam van de Client -->
+                            <Label Text="{Binding Client.Name}" 
+                                   Grid.Column="0"
+                                   FontSize="16"
+                                   FontAttributes="Bold"
+                                   TextColor="{StaticResource Secondary}" />
+
+                            <!-- Naam van de boodschappenlijst -->
+                            <Label Text="{Binding GroceryList.Name}" 
+                                   Grid.Column="1"
+                                   FontSize="16"
+                                   TextColor="{StaticResource Secondary}" />
                         </Grid>
                     </DataTemplate>
                 </CollectionView.ItemTemplate>
