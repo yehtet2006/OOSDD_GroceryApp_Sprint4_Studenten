@@ -15,9 +15,14 @@
             <RowDefinition Height="80"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
-        <Picker Grid.Column="0" Grid.Row="0" Margin="10,0,0,0" Title="Klik op onderstaand pijltje om een product te selecteren:"
+        <Picker 
+            Grid.Column="0" 
+            Grid.Row="0" 
+            Margin="10,0,0,0" 
+            Title="Klik op onderstaand pijltje om een product te selecteren:"
         ItemsSource="{Binding Products}"
-        SelectedItem="{Binding SelectedProduct, Mode=TwoWay}" 
+        SelectedItem="{Binding SelectedProduct, Mode=TwoWay}"
+            ItemDisplayBinding="{Binding Name}"
         SelectedIndexChanged="Picker_SelectedIndexChanged"
         BackgroundColor="{StaticResource Primary}"
             TextColor="{StaticResource Secondary}">
@@ -35,6 +40,18 @@
                                 <ColumnDefinition Width="*"/>
                             </Grid.ColumnDefinitions>
                             <!-- Toon hier de naam van de Client naam van de boodschappenlijst -->
+                            <!-- Naam van de Client -->
+                            <Label Text="{Binding Client.Name}" 
+                                   Grid.Column="0"
+                                   FontSize="16"
+                                   FontAttributes="Bold"
+                                   TextColor="{StaticResource Secondary}" />
+
+                            <!-- Naam van de boodschappenlijst -->
+                            <Label Text="{Binding GroceryList.Name}" 
+                                   Grid.Column="1"
+                                   FontSize="16"
+                                   TextColor="{StaticResource Secondary}" />
                         </Grid>
                     </DataTemplate>
                 </CollectionView.ItemTemplate>
