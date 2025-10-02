@@ -1,41 +1,39 @@
-name: MAUI Unit Tests
- 
+name: MAUI Workflow
+
 on:
   push:
     branches:
       - main
-      - development
+      - develop
       - release/**
-      - hotfix/**
       - feature/**
   pull_request:
     branches:
       - main
-      - development
-      - release
-      - hotfix
-      - feature
- 
+      - develop
+      - release/**
+      - feature/**
+
 jobs:
   test:
     runs-on: ubuntu-latest
     steps:
       - name: Haal de repository op
         uses: actions/checkout@v4
- 
+
       - name: Installeer .NET SDK
         uses: actions/setup-dotnet@v3
         with:
-          dotnet-version: '8.0.x'  # Gebruik de juiste versie voor MAUI
- 
+          dotnet-version: '8.0.x'
+
       - name: Installeer MAUI workloads
         run: dotnet workload install maui-android
- 
+
       - name: Herstel afhankelijkheden
         run: dotnet restore
- 
+
       - name: Bouw de applicatie
-        run: dotnet build Grocery.App/Grocery.App.csproj --configuration Release --no-restore --framework net8.0-android /p:ApplicationId=nl.windesheim.groceryapp
- 
+        run: dotnet build --configuration Release --no-restore
+
       - name: Voer unit tests uit
-        run: dotnet test Grocery.sln
+        run: dotnet test --configuration Release --no-restore --no-build --verbosity normal
